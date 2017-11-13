@@ -14,9 +14,9 @@ try {
     checkout scm;  
    }
     stage('Install Ansible') {
-		sh 'sudo -s yum install epel-release -y'
-        sh 'sudo -s yum install ansible -y'
-        sh 'sudo -s yum install epel-release -y'
+		sh 'sudo -S yum install epel-release -y'
+        sh 'sudo -S yum install ansible -y'
+        sh 'sudo -S yum install epel-release -y'
    }
    stage('Install Tomcat') {
 		sh 'sudo ansible-playbook /var/lib/jenkins/workspace/ApacheJenkins_master-KJ62CKVCZFGDMZ4FWDQF3YVB2X67VWNSRTZOPXKS2ZK575ZNBT6Q/1installtomcat.yml'
