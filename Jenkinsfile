@@ -22,12 +22,6 @@ try {
    stage('Install Tomcat') {
 		sh 'sudo ansible-playbook 1installtomcat.yml'
    }
-        
-
-
-
-
-	}
    stage('Clean'){
 		sh 'rm -rf dist && rm -rf dist.tar.gz && rm -rf release/*.tar.gz'
    }
