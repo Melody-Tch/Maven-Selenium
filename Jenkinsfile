@@ -31,7 +31,6 @@ try {
 		sh 'sudo ansible-playbook /var/lib/jenkins/workspace/ApacheJenkins_master-KJ62CKVCZFGDMZ4FWDQF3YVB2X67VWNSRTZOPXKS2ZK575ZNBT6Q/4setupapache.yml'
    }
 		}
-	}
 }catch (err) {
 
         currentBuild.result = "FAILURE"
