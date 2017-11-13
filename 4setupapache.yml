@@ -10,7 +10,3 @@
       shell: "sudo chcon -R --reference=/etc/httpd/conf.d/welcome.conf /etc/httpd/conf.d/tomcat.conf"
     - name: restart apache
       shell: "sudo systemctl restart httpd.service"
-    #sudo rm /etc/httpd/conf.d/tomcat.conf -r
-    #sudo vi /etc/httpd/conf.d/tomcat.conf
-#/var/lib/tomcat8/webapps
-      #note: it ends in an non-zero error code at the end but the application runs perfectly
