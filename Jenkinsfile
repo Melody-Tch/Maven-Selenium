@@ -37,36 +37,3 @@ try {
         throw err
     }
 }
-
-node{
-    def userInput = false;
-    def didTimeout = false;
-    def aws_s3_deploy_bucket_name = 'devopscdp-sit';
-    def aws_s3_deploy_bucket_region = 'ap-southeast-1';
-
-    withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'kenjisato', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']])  
-    {
-	    stage('Cleanup SIT')
-        {
-            awsIdentity() //show us what aws identity is being used
-            withAWS(region: aws_s3_deploy_bucket_region) {
-            s3Delete(bucket: aws_s3_deploy_bucket_name, path: '/')
-            }
-        }
-        stage('Deploy SIT')
-        {
-            echo "performing deployment"
-            dir("devopscdp_ui_dist") {
-                unstash "devopscdp_ui_dist"
-            }
-            withAWS(region: aws_s3_deploy_bucket_region) {
-            s3Upload(file: 'devopscdp_ui_dist/dist', bucket: aws_s3_deploy_bucket_name, path: '')
-            }
-        }
-    }
-}
-def getTimeStamp(){
-	def dateFormat = new SimpleDateFormat("yyyyMMddHHmm")
-	def date = new Date()
-	return dateFormat.format(date);
-}
