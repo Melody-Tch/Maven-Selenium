@@ -1,14 +1,7 @@
 import java.text.SimpleDateFormat
 
 node {
-    
 currentBuild.result = "SUCCESS"
-def timeStamp;
-def project_id;
-def aws_s3_bucket_name;
-def aws_s3_deploy_bucket_name;
-def aws_s3_bucket_region;
-
 try {
    stage('Checkout') { // for display purposes
     checkout scm;  
