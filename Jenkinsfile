@@ -8,7 +8,16 @@ try {
    }
     stage('Install Ansible') {
 		sh 'sudo yum install epel-release -y'
-        sh 'sudo yum install ansible -y'
+    sh 'sudo yum install ansible -y'
+   }
+    stage('Build Maven Project') {
+		sh 'cd /usr/local'
+    sh 'wget http://www-eu.apache.org/dist/maven/maven-3/3.5.2/binaries/apache-maven-3.5.2-bin.tar.gz'
+    sh 'sudo tar xzf apache-maven-3.5.2-bin.tar.gz'
+    sh 'sudo ln -s apache-maven-3.5.2  maven'
+    sh 'rm -f /usr/local/apache-maven-3.5.2-bin.tar.gz'
+    sh 'mvn -version'
+
    }
     stage('Build Maven Project') {
 		sh 'mvn clean install'
