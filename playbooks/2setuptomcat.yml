@@ -2,9 +2,14 @@
 - hosts: localhost
   remote_user: root
   tasks:
-    - name: moving file1 to tomcat
-      shell: "sudo cp /var/lib/jenkins/workspace/ApacheJenkins_master-KJ62CKVCZFGDMZ4FWDQF3YVB2X67VWNSRTZOPXKS2ZK575ZNBT6Q/HelloWorldJSP.war /usr/share/tomcat/webapps"
-    - name: moving file2 to tomcat
-      shell: "sudo cp /var/lib/jenkins/workspace/ApacheJenkins_master-KJ62CKVCZFGDMZ4FWDQF3YVB2X67VWNSRTZOPXKS2ZK575ZNBT6Q/InitialProjectTest.war /usr/share/tomcat/webapps"
+    - copy:
+      src: /var/lib/jenkins/workspace/ApacheJenkins_master-KJ62CKVCZFGDMZ4FWDQF3YVB2X67VWNSRTZOPXKS2ZK575ZNBT6Q/HelloWorldJSP.war
+      dest: /usr/share/tomcat/webapps/
+    - copy:
+      src: /var/lib/jenkins/workspace/ApacheJenkins_master-KJ62CKVCZFGDMZ4FWDQF3YVB2X67VWNSRTZOPXKS2ZK575ZNBT6Q/InitialProjectTest.war
+      dest: /usr/share/tomcat/webapps/
+    - copy:
+      src: /var/lib/jenkins/workspace/ApacheJenkins_master-KJ62CKVCZFGDMZ4FWDQF3YVB2X67VWNSRTZOPXKS2ZK575ZNBT6Q/user_api_new/target/userapi-0.0.1-SNAPSHOT.war
+      dest: /usr/share/tomcat/webapps/
     - name: Restart Tom Cat
       shell: "sudo systemctl restart tomcat"
