@@ -17,6 +17,7 @@ try {
             echo "M2_HOME = ${M2_HOME}"
             '''
         }
+    }
     stage('Maven Build') {
 		sh 'sh 'mvn -Dmaven.test.failure.ignore=true install''
         sh 'sh 'mvn -Dmaven.test.failure.ignore=true install''
