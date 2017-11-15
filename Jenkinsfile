@@ -1,6 +1,9 @@
 import java.text.SimpleDateFormat
 
 node {
+    tools { 
+        maven 'Maven 3.3.9' 
+    }
 currentBuild.result = "SUCCESS"
 try {
    stage('Checkout') { // for display purposes
