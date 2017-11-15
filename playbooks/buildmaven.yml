@@ -1,6 +1,0 @@
----
-- hosts: localhost
-  remote_user: root
-  tasks:
-    - name: stats
-      shell: "sudo mvn clean install"

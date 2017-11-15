@@ -11,7 +11,7 @@ try {
         sh 'sudo yum install ansible -y'
    }
     stage('Build Maven Project') {
-		sh 'sudo ansible-playbook /var/lib/jenkins/workspace/ApacheJenkins_master-KJ62CKVCZFGDMZ4FWDQF3YVB2X67VWNSRTZOPXKS2ZK575ZNBT6Q/playbooks/buildmaven.yml'
+		sh 'mvn clean install'
    }
    stage('Install Tomcat') {
 		sh 'sudo ansible-playbook /var/lib/jenkins/workspace/ApacheJenkins_master-KJ62CKVCZFGDMZ4FWDQF3YVB2X67VWNSRTZOPXKS2ZK575ZNBT6Q/playbooks/1installtomcat.yml'
