@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+  remote_user: root
+  tasks:
+    - name: Install Tomcat
+      shell: "cd /usr/local"
+    - name: Install Tomcat extra
+      shell: "wget http://www-eu.apache.org/dist/maven/maven-3/3.5.2/binaries/apache-maven-3.5.2-bin.tar.gz"
+    - name: Enable tomcat
+      shell: "sudo tar xzf apache-maven-3.5.2-bin.tar.gz"
+    - name: Start tomcat
+      shell: "sudo ln -s apache-maven-3.5.2  maven"
