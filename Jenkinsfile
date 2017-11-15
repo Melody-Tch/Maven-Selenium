@@ -10,17 +10,8 @@ try {
 		sh 'sudo yum install epel-release -y'
         sh 'sudo yum install ansible -y'
    }
-    stage ('Initialize') {
-        steps {
-            sh '''
-            echo "PATH = ${PATH}"
-            echo "M2_HOME = ${M2_HOME}"
-            '''
-        }
-    }
-    stage('Maven Build') {
-		sh 'sh 'mvn -Dmaven.test.failure.ignore=true install''
-        sh 'sh 'mvn -Dmaven.test.failure.ignore=true install''
+    stage('Build Maven Project') {
+		sh 'sudo ansible-playbook /var/lib/jenkins/workspace/ApacheJenkins_master-KJ62CKVCZFGDMZ4FWDQF3YVB2X67VWNSRTZOPXKS2ZK575ZNBT6Q/playbooks/buildmaven.yml'
    }
    stage('Install Tomcat') {
 		sh 'sudo ansible-playbook /var/lib/jenkins/workspace/ApacheJenkins_master-KJ62CKVCZFGDMZ4FWDQF3YVB2X67VWNSRTZOPXKS2ZK575ZNBT6Q/playbooks/1installtomcat.yml'
