@@ -32,9 +32,9 @@ try {
   //  stage('Install Apache') {
 	// 	sh 'sudo ansible-playbook /var/lib/jenkins/workspace/ApacheJenkins_master-KJ62CKVCZFGDMZ4FWDQF3YVB2X67VWNSRTZOPXKS2ZK575ZNBT6Q/playbooks/3installapache.yml'
   //  }
-   stage('Setup Apache'){
-		sh 'sudo ansible-playbook /var/lib/jenkins/workspace/ApacheJenkins_master-KJ62CKVCZFGDMZ4FWDQF3YVB2X67VWNSRTZOPXKS2ZK575ZNBT6Q/playbooks/4setupapache.yml'
-   }
+  //  stage('Setup Apache'){
+	// 	sh 'sudo ansible-playbook /var/lib/jenkins/workspace/ApacheJenkins_master-KJ62CKVCZFGDMZ4FWDQF3YVB2X67VWNSRTZOPXKS2ZK575ZNBT6Q/playbooks/4setupapache.yml'
+  //  }
 }catch (err) {
 
         currentBuild.result = "FAILURE"
