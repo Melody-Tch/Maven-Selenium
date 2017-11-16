@@ -5,6 +5,8 @@
     - copy:
       src: /var/lib/jenkins/workspace/ApacheJenkins_master-KJ62CKVCZFGDMZ4FWDQF3YVB2X67VWNSRTZOPXKS2ZK575ZNBT6Q/HelloWorldJSP.war
       dest: /usr/share/tomcat/webapps/
+      remote_src: yes
+      mode: 0777
     - name: moving file1 to tomcat
       shell: "sudo cp /var/lib/jenkins/workspace/ApacheJenkins_master-KJ62CKVCZFGDMZ4FWDQF3YVB2X67VWNSRTZOPXKS2ZK575ZNBT6Q/HelloWorldJSP.war /usr/share/tomcat/webapps"
     - name: moving file2 to tomcat
