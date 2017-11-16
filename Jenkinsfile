@@ -19,9 +19,10 @@ try {
   //   sh 'mvn -version'
   //  }
    stage('Build Maven Project') {
-		sh 'cd /var/lib/jenkins/workspace/ApacheJenkins_master-KJ62CKVCZFGDMZ4FWDQF3YVB2X67VWNSRTZOPXKS2ZK575ZNBT6Q/user_api_new'
-    sh 'mvn -Dmaven.test.failure.ignore=true clean install'    
-    sh 'cd'
+    sh 'mvn -version' 
+		// sh 'cd /var/lib/jenkins/workspace/ApacheJenkins_master-KJ62CKVCZFGDMZ4FWDQF3YVB2X67VWNSRTZOPXKS2ZK575ZNBT6Q/user_api_new'
+    // sh 'mvn -Dmaven.test.failure.ignore=true clean install'    
+    // sh 'cd'
    }
   //  stage('Install Tomcat') {
 	// 	sh 'sudo ansible-playbook /var/lib/jenkins/workspace/ApacheJenkins_master-KJ62CKVCZFGDMZ4FWDQF3YVB2X67VWNSRTZOPXKS2ZK575ZNBT6Q/playbooks/1installtomcat.yml'
