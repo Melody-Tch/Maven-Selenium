@@ -18,14 +18,14 @@ try {
   //   sh 'rm -f /usr/local/apache-maven-3.5.2-bin.tar.gz'
   //   sh 'mvn -version'
   //  }
-  //  stage('Build Maven Project') {
-	// 	sh 'cd /var/lib/jenkins/workspace/ApacheJenkins_master-KJ62CKVCZFGDMZ4FWDQF3YVB2X67VWNSRTZOPXKS2ZK575ZNBT6Q/user_api_new'
-  //  sh 'sudo mvn -Dmaven.test.failure.ignore=true clean install'    
-  //   sh 'cd'
-  //  }
-   stage('Install Tomcat') {
-		sh 'sudo ansible-playbook /var/lib/jenkins/workspace/ApacheJenkins_master-KJ62CKVCZFGDMZ4FWDQF3YVB2X67VWNSRTZOPXKS2ZK575ZNBT6Q/playbooks/1installtomcat.yml'
+   stage('Build Maven Project') {
+		sh 'cd /var/lib/jenkins/workspace/ApacheJenkins_master-KJ62CKVCZFGDMZ4FWDQF3YVB2X67VWNSRTZOPXKS2ZK575ZNBT6Q/user_api_new'
+    sh 'sudo mvn -Dmaven.test.failure.ignore=true clean install'    
+    sh 'cd'
    }
+  //  stage('Install Tomcat') {
+	// 	sh 'sudo ansible-playbook /var/lib/jenkins/workspace/ApacheJenkins_master-KJ62CKVCZFGDMZ4FWDQF3YVB2X67VWNSRTZOPXKS2ZK575ZNBT6Q/playbooks/1installtomcat.yml'
+  //  }
    stage('Setup Tomcat') {
 		sh 'sudo ansible-playbook /var/lib/jenkins/workspace/ApacheJenkins_master-KJ62CKVCZFGDMZ4FWDQF3YVB2X67VWNSRTZOPXKS2ZK575ZNBT6Q/playbooks/2setuptomcat.yml -v'
    }
