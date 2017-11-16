@@ -20,7 +20,7 @@ try {
   //  }
    stage('Build Maven Project') {
     sh '/usr/local/maven/bin/mvn -version' 
-    sh 'sudo cd /var/lib/jenkins/workspace/ApacheJenkins_master-KJ62CKVCZFGDMZ4FWDQF3YVB2X67VWNSRTZOPXKS2ZK575ZNBT6Q/user_api_new & pwd & /usr/local/maven/bin/mvn -Dmaven.test.failure.ignore=true clean install'    
+    sh 'sudo /usr/local/maven/bin/mvn -f /var/lib/jenkins/workspace/ApacheJenkins_master-KJ62CKVCZFGDMZ4FWDQF3YVB2X67VWNSRTZOPXKS2ZK575ZNBT6Q/user_api_new/pom.xml -Dmaven.test.failure.ignore=true clean install'    
     sh 'cd'
    }
   //  stage('Install Tomcat') {
