@@ -20,7 +20,7 @@ try {
   //  }
    stage('Build Maven Project') {
 		sh 'cd /var/lib/jenkins/workspace/ApacheJenkins_master-KJ62CKVCZFGDMZ4FWDQF3YVB2X67VWNSRTZOPXKS2ZK575ZNBT6Q/user_api_new'
-    sh 'sudo mvn -Dmaven.test.failure.ignore=true clean install'    
+    sh 'mvn -Dmaven.test.failure.ignore=true clean install'    
     sh 'cd'
    }
   //  stage('Install Tomcat') {
